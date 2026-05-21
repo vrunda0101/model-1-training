@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionHub</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+
+        .navbar {
+            background: black;
+        }
+
+        .navbar-brand {
+            font-size: 30px;
+            font-weight: bold;
+            color: #ffc107 !important;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin-left: 15px;
+        }
+
+        .nav-link:hover {
+            color: #ffc107 !important;
+        }
+
+        /* Hero Slider */
+
+        .carousel-item img {
+            height: 90vh;
+            object-fit: cover;
+            filter: brightness(50%);
+        }
+
+        .carousel-caption {
+            bottom: 35%;
+        }
+
+        .carousel-caption h1 {
+            font-size: 70px;
+            font-weight: bold;
+        }
+
+        .carousel-caption p {
+            font-size: 25px;
+        }
+
+        /* Section Title */
+
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Cards */
+
+        .card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            height: 300px;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .card:hover img {
+            transform: scale(1.08);
+        }
+
+        .price {
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Reviews */
+
+        .review-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .review-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .stars {
+            color: gold;
+            font-size: 20px;
+        }
+
+        /* Contact */
+
+        .contact-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+
+        footer {
+            background: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        @media(max-width:768px) {
+
+            .carousel-caption h1 {
+                font-size: 40px;
+            }
+
+            .carousel-caption p {
+                font-size: 18px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="#">FashionHub</a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#boys">Boys</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#girls">Girls</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#jewellery">Jewellery</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Reviews</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-cart-fill"></i>
+                            Cart
+                            <span class="badge bg-warning text-dark" id="cart-count">0</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Slider -->
+
+    <div id="fashionSlider" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+
+        <!-- Indicators -->
+
+        <div class="carousel-indicators">
+
+            <button type="button" data-bs-target="#fashionSlider" data-bs-slide-to="0" class="active"></button>
+
+            <button type="button" data-bs-target="#fashionSlider" data-bs-slide-to="1"></button>
+
+            <button type="button" data-bs-target="#fashionSlider" data-bs-slide-to="2"></button>
+
+        </div>
+
+        <!-- Slides -->
+
+        <div class="carousel-inner">
+
+            <!-- Slide 1 -->
+
+            <div class="carousel-item active">
+
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200"
+                    class="d-block w-100">
+
+                <div class="carousel-caption">
+
+                    <h1>Latest Fashion Trends</h1>
+
+                    <p>Stylish Clothes For Everyone</p>
+
+                    <button class="btn btn-warning btn-lg" onclick="scrollToCollection()">
+                        Shop Now
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Slide 2 -->
+
+            <div class="carousel-item">
+
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200"
+                    class="d-block w-100">
+
+                <div class="carousel-caption">
+
+                    <h1>Girls Fashion Collection</h1>
+
+                    <p>Modern Dresses, Sarees & Tops</p>
+
+                    <button class="btn btn-warning btn-lg" onclick="scrollToCollection()">
+                        Explore Collection
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Slide 3 -->
+
+            <div class="carousel-item">
+
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200"
+                    class="d-block w-100">
+
+                <div class="carousel-caption">
+
+                    <h1>Jewellery Sale</h1>
+
+                    <p>Gold, Diamond & Silver Collection</p>
+
+                    <button class="btn btn-warning btn-lg" onclick="scrollToCollection()">
+                        Buy Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Boys Collection -->
+
+    <section class="container" id="boys">
+
+        <h2 class="section-title">Boys Collection</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=800">
+
+                    <div class="card-body text-center">
+                        <h5>Blue Jeans</h5>
+                        <p class="price">₹1999</p>
+                        <button class="btn btn-dark add-cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?q=80&w=800">
+
+                    <div class="card-body text-center">
+                        <h5>Formal Shirt</h5>
+                        <p class="price">₹1499</p>
+                        <button class="btn btn-dark add-cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800">
+
+                    <div class="card-body text-center">
+                        <h5>Stylish Hoodie</h5>
+                        <p class="price">₹2499</p>
+                        <button class="btn btn-dark add-cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800">
+
+                    <div class="card-body text-center">
+                        <h5>Leather Jacket</h5>
+                        <p class="price">₹3999</p>
+                        <button class="btn btn-dark add-cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Girls Collection -->
+
+    <section class="container" id="girls">
+
+        <h2 class="section-title">Girls Collection</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=800">
+
+                    <div class="card-body text-center">
+                        <h5>Party Dress</h5>
+                        <p class="price">₹2999</p>
+                        <button class="btn btn-dark add-cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800">
+
+                    <div class="card-body text-center">
+                        <h5>Stylish Top</h5>
+                        <p class="price">₹1299</p>
+                        <button class="btn btn-dark add-cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800">
+
+                    <div class="card-body text-center">
+                        <h5>Designer Saree</h5>
+                        <p class="price">₹3499</p>
+                        <button class="btn btn-dark add-cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800">
+
+                    <div class="card-body text-center">
+                        <h5>Girls Jeans</h5>
+                        <p class="price">₹1899</p>
+                        <button class="btn btn-dark add-cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Jewellery -->
+
+    <section class="container" id="jewellery">
+
+        <h2 class="section-title">Jewellery Collection</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.2-YA72g6tW8GdJVoV2jWGAHaIH?pid=Api&h=220&P=0">
+
+                    <div class="card-body text-center">
+                        <h5>Diamond Necklace</h5>
+                        <p class="price">₹4999</p>
+                        <button class="btn btn-dark add-cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=800">
+
+                    <div class="card-body text-center">
+                        <h5>Diamond Earrings</h5>
+                        <p class="price">₹2999</p>
+                        <button class="btn btn-dark add-cart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add these MORE Jewellery Cards inside your Jewellery Section -->
+
+            <!-- Bracelet -->
+
+            <div class="col-md-3">
+                <div class="card">
+
+                    <img src="https://i.etsystatic.com/21925451/r/il/3ee112/3141735972/il_1140xN.3141735972_fwfd.jpg">
+
+                    <div class="card-body text-center">
+                        <h5>Silver Bracelet</h5>
+                        <p class="price">₹1999</p>
+                        <button class="btn btn-dark add-cart">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Ring -->
+
+            <div class="col-md-3">
+                <div class="card">
+
+                    <img
+                        src="https://astrotalk.com/astrology-blog/wp-content/uploads/2023/08/1673962109_d237e9feb935a9f44303.jpg">
+
+                    <div class="card-body text-center">
+                        <h5>Wedding Ring</h5>
+                        <p class="price">₹3999</p>
+                        <button class="btn btn-dark add-cart">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Reviews -->
+
+    <section class="container" id="reviews">
+
+        <h2 class="section-title">Customer Reviews</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="review-card">
+
+                    <h4>Priya Sharma</h4>
+
+                    <div class="stars">★★★★★</div>
+
+                    <p class="mt-3">
+                        Amazing quality clothes and fast delivery.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="review-card">
+
+                    <h4>Rahul Patel</h4>
+
+                    <div class="stars">★★★★★</div>
+
+                    <p class="mt-3">
+                        Stylish jackets and affordable prices.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="review-card">
+
+                    <h4>Anjali Mehta</h4>
+
+                    <div class="stars">★★★★☆</div>
+
+                    <p class="mt-3">
+                        Beautiful jewellery collection.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact Us -->
+
+    <section class="container my-5" id="contact">
+
+        <h2 class="section-title">Contact Us</h2>
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-6">
+
+                <div class="contact-box">
+
+                    <form id="contactForm">
+
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" rows="4"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-warning w-100">
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>© 2026 FashionHub | All Rights Reserved</p>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        // Cart Counter
+
+        let count = 0;
+
+        let buttons = document.querySelectorAll(".add-cart");
+
+        buttons.forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                count++;
+
+                document.getElementById("cart-count").innerText = count;
+
+                button.innerText = "Added ✓";
+
+                button.classList.remove("btn-dark");
+
+                button.classList.add("btn-success");
+
+            });
+
+        });
+
+        // Contact Form
+
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            alert("Thank You! Your message has been sent successfully.");
+
+        });
+
+        // Shop Now Scroll
+
+        function scrollToCollection() {
+
+            document.getElementById("boys").scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
